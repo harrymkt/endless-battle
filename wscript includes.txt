@@ -1,0 +1,17 @@
+// all head
+<meta charset="UTF-8">
+<meta name="author" content="harry min khant">
+<meta name="keywords" content="harry, min, khant, blind, social, visually impaired, computer, pc, mobile, android">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/endless-battle/css/style.css" rel="stylesheet" type="text/css">
+<script src="/endless-battle/scripts/functions.js"></script>
+<script src="/endless-battle/scripts/all.js"></script>
+<script src="/endless-battle/scripts/nav.js"></script>
+<script src="/endless-battle/scripts/footer.js"></script>
+<script>sett("t");</script>
+
+//navigation
+<script>navstart();</script>
+
+//footer
+<script>addfooter();</script>

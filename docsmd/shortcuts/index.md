@@ -1,18 +1,31 @@
-# Getting Started
+# Shortcuts
 
-# Menus
+## General
 
-A menu is a containers that stores items to choose. The menu will update the items depending on what menu you have selected. Main menu, for example, has the options play, settings, quit, ETC.
+* **R**: Reloads the current weapon.
+* **D**: Brings up a menu to select weapon.
+* **Control**: Fires the currently selected weapon.
 
-A menu can be navigated using your arrow keys. Specificly, this is the up and down arrow keys.
+## Movement
 
-You can press enter to perform the selected item, and escape to break. Keep in mind that some menus can be disabled the escaping, meaning you won't be able to press escape key in that disabled menus.
+* **Spacebar**: Jumps.
+* **Arrow Keys, Page up and Page down**: Moves around the map respectively.
+* **Q**: Turns 45 degrees left.
+* **E**: Turns 45 degrees right.
 
-In some possible ability, you can also press the tab key to repeat the title of the menu again, so you would know in case you don't hear the screen reader's speech when the menu is displaied.
+## Informational
 
-# Forms, Virtual dialogs
+* **A**: Checks nearby enemies.
+* **F**: Checks your direction.
+* **H**: Checks health.
+* **Z**: Checks information of the weapon ammo.
+* **C**: Checks coordinates.
+* **Comma**: Moves the buffer log previous.
+	* Combine with shift key will move start.
+* **Period**: Moves the buffer log next.
+	* Combine with shift key will move end.
 
-A form is a set of controls that displaies like a window, for instance, like windows checkboxes, lists, ETC.
+## Form
 
 When the form is popped out, you can use the following keys.
 
@@ -24,7 +37,7 @@ When the form is popped out, you can use the following keys.
 * **Enter**: Performs action on a control. Press if it is a button.
 * **Escape**: Breaks the form.
 
-## List shortcuts
+### List shortcuts
 
 These shortcuts can be used if you are focusing on a list.
 
