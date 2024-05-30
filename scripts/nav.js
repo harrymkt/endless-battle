@@ -66,7 +66,8 @@ document.body.appendChild(navigationElement);
 // Define pages array
 var pages = [
 { name: "Home", url: "/endless-battle", accesskey: "h" },
-{ name: "Documentation", url: "/endless-battle/docs", accesskey: "d" }
+{ name: "Documentation", url: "/endless-battle/docs", accesskey: "d" },
+{ name: "Download", url: "/endless-battle/download", accesskey: "g" }
 ];
 
 // Get the current URL
@@ -138,7 +139,7 @@ var mn = dates.getMinutes();
 var dy = dates.getDate();
 var dt = "";
 var currentage=y-birthyear;
-if(m == 4 && dy == 28)
+if(m == 4 && dy == 30)
 dt += "The game has been reached " + currentage + " year"+(currentage===1?"":"s")+" of launching. ";
 if((m == 11 && dy == 31) || (m == 0 && dy == 1))
 dt += "Happy new year! ";

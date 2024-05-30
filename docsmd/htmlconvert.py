@@ -19,9 +19,11 @@ HTML_TOP = """<!DOCTYPE html>
 </head>
 <body>
 <script>navstart();</script>
+<div id="mainc">
 """
 
 HTML_BOTTOM = """
+</div>
 <script>addfooter();</script>
 </body>
 </html>"""
