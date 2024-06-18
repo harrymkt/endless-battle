@@ -31,8 +31,6 @@ When the form is popped out, you can use the following keys.
 
 * **Tab**: Moves the control next.
 	* Combine with shift key will move to previous.
-	* Combine with control will move to the next tab control if there is available.
-		* Combine with shift will move to the previous tab control if there is available.
 * **Spacebar**: Toggles options. For example, check and uncheck the checkboxes. Press if it is a button.
 * **Enter**: Performs action on a control. Press if it is a button.
 * **Escape**: Breaks the form.
