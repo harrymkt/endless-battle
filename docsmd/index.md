@@ -16,16 +16,14 @@ Do you need help with the game?
 
 [Contact the developer on telegram](https://t.me/harrymkt)
 
-# Requirements
-
+## Requirements
 * 1 GB ram, 2 GB is recommended. This is for the best possible performance.
 * 50 MB disk space. The higher disk space you have, the better.
 * Speakers with 3d environment support, possibly headphones.
 * X64 system, this is required, the game will not run on 32 bit systems.
-* Windows (8, 8.1, 10, 11); Linux (using Wine).
+* Windows (8, 8.1, 10, 11); Linux.
 * For screen readers, the game is tested under NVDA, and SAPI5.
 
-# Documentations
-
+## Documentations
 * [Getting started](getstart)
 * [Shortcuts](shortcuts)
