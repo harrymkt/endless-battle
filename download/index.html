@@ -24,8 +24,22 @@
 <li>Windows (8, 8.1, 10, 11); Linux; Mac OS.</li>
 <li>For screen readers, the game is tested under NVDA, and SAPI5.</li>
 </ul>
+<h2>Current version</h2>
+<script>
+var dlvp=document.createElement("p");
+get_github_latest_release_version("harrymkt","endless-battle").then(v=>
+{
+dlvp.textContent=v;
+})
+.catch(er=>
+{
+dlvp.textContent="Undefined";
+});
+document.body.appendChild(dlvp);
+</script>
 <h2>Download</h2>
-<p>The game is currently under construction and therefore download link is not available as of yet.</p>
+<p><a href="https://github.com/harrymkt/endless-battle/releases/latest/download/eb-windows.zip">Download for Windows</a></p>
+<p><a href="https://github.com/harrymkt/endless-battle/releases/latest/download/eb-linux.zip">Download for Linux</a></p>
 
 <script>addfooter();</script>
 </body>
