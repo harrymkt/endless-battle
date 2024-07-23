@@ -23,6 +23,7 @@
 
 ## Form
 When the form is popped out, you can use the following keys.
+
 * **Tab**: Moves the control next.
 	* Combine with shift key will move to previous.
 * **Spacebar**: Toggles options. For example, check and uncheck the checkboxes. Press if it is a button.

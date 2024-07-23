@@ -1,7 +1,7 @@
 import markdown
 import os
 import glob
-
+import shutil
 # Additional HTML tags to be added at the top and bottom of the generated HTML files
 HTML_TOP = """<!DOCTYPE html>
 <html lang="en">
@@ -59,6 +59,9 @@ def process_markdown_file(filepath):
 	print(f"Converted {filepath} to {html_filename}")
 
 def main():
+	if os.path.exists("../docs"):
+		shutil.rmtree("../docs")
+		print("Docs directory has been deleted")
 	"""Finds all markdown files in the directory and subdirectories, converts to HTML"""
 	for filepath in glob.glob("**/*.md", recursive=True):
 		process_markdown_file(filepath)
