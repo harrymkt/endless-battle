@@ -147,6 +147,30 @@ catch (error)
 return `Error fetching release assets: ${error.message}`;
 }
 }
+function instant_get_github_latest_release_version(owner, repo, otherwise="undefined")
+{
+get_github_latest_release_version(owner, repo)
+.then(v=>
+{
+return v;
+})
+.catch(er=>
+{
+return otherwise;
+})
+}
+function instant_get_github_release_asset_info(owner, repo, release, asset, what, otherwise="undefined")
+{
+get_github_release_asset_info(owner, repo, release, asset, what)
+.then(i=>
+{
+return i;
+})
+.catch(er=>
+{
+return otherwise;
+})
+}
 function get_storage(value, otherwise="undefined")
 {
 var n=localStorage.getItem(value);
@@ -182,28 +206,4 @@ return round(size, round_to) + " GB";
 }
 size = size / 1024;
 return round(size, round_to) + " TB";
-}
-function instant_get_github_latest_release_version(owner, repo, otherwise="undefined")
-{
-get_github_latest_release_version(owner, repo)
-.then(v=>
-{
-return v;
-})
-.catch(er=>
-{
-return otherwise;
-}
-}
-function instant_get_github_release_asset_info(owner, repo, release, asset, what, otherwise="undefined")
-{
-get_github_release_asset_info(owner, repo, release, asset, what)
-.then(i=>
-{
-return i;
-})
-.catch(er=>
-{
-return otherwise;
-}
 }
