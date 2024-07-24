@@ -34,9 +34,9 @@ document.body.appendChild(dlvp);
 <ul id="download">
 </ul>
 <script>
-var sizewindows=convert_size(instant_get_github_release_asset_info("harrymkt","endless-battle","latest","eb-windows.zip","size"));
+var sizewindows=convert_size(instant_get_github_release_asset_info("harrymkt","endless-battle","latest",1,"size"));
 var dwindows=createLinkListItem("https://github.com/harrymkt/endless-battle/releases/latest/download/eb-windows.zip","Download for Windows(size "+sizewindows,"");
-var sizelinux=convert_size(instant_get_github_release_asset_info("harrymkt","endless-battle","latest","eb-linux.zip","size"));
+var sizelinux=convert_size(instant_get_github_release_asset_info("harrymkt","endless-battle","latest",2,"size"));
 var dlinux=createLinkListItem("https://github.com/harrymkt/endless-battle/releases/latest/download/eb-linux.zip","Download for Linux(size "+sizelinux,"");
 var dl=document.getElementById("download");
 dl.appendChild(dwindows);
