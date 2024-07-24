@@ -117,58 +117,6 @@ catch (error)
 return `Error fetching latest release: ${error}`;
 }
 }
-async function get_github_release_asset_info(owner, repo, release, asset_id, what)
-{
-try
-{
-// Fetch the assets of the specified release from the GitHub API
-const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/${release}/assets/${asset_id}`);
-
-if (!response.ok)
-{
-return `Failed to fetch assets: ${response.status} ${response.statusText}`;
-}
-
-const data = await response.json();
-if (!data)
-{
-return `Asset not found: ${asset}`;
-}
-
-let inf = "";
-if (what === "size") inf = data.size;
-else if (what === "download_count") inf = data.download_count;
-return inf;
-}
-catch (error)
-{
-return `Error fetching release assets: ${error.message}`;
-}
-}
-function instant_get_github_latest_release_version(owner, repo, otherwise="undefined")
-{
-get_github_latest_release_version(owner, repo)
-.then(v=>
-{
-return v;
-})
-.catch(er=>
-{
-return otherwise;
-});
-}
-function instant_get_github_release_asset_info(owner, repo, release, asset_id, what, otherwise="undefined")
-{
-get_github_release_asset_info(owner, repo, release, asset_id, what)
-.then(i=>
-{
-return i;
-})
-.catch(er=>
-{
-return otherwise;
-});
-}
 function get_storage(value, otherwise="undefined")
 {
 var n=localStorage.getItem(value);

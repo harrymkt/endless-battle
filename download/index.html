@@ -27,17 +27,22 @@
 <h2>Current version</h2>
 <script>
 var dlvp=document.createElement("p");
-dlvp.textContent=instant_get_github_latest_release_version("harrymkt","endless-battle");
+get_github_latest_release_version("harrymkt","endless-battle").then(v=>
+{
+dlvp.textContent=v;
+})
+.catch(er=>
+{
+dlvp.textContent="Undefined";
+});
 document.body.appendChild(dlvp);
 </script>
 <h2>Download</h2>
 <ul id="download">
 </ul>
 <script>
-var sizewindows=convert_size(instant_get_github_release_asset_info("harrymkt","endless-battle","latest",1,"size"));
-var dwindows=createLinkListItem("https://github.com/harrymkt/endless-battle/releases/latest/download/eb-windows.zip","Download for Windows(size "+sizewindows,"");
-var sizelinux=convert_size(instant_get_github_release_asset_info("harrymkt","endless-battle","latest",2,"size"));
-var dlinux=createLinkListItem("https://github.com/harrymkt/endless-battle/releases/latest/download/eb-linux.zip","Download for Linux(size "+sizelinux,"");
+var dwindows=createLinkListItem("https://github.com/harrymkt/endless-battle/releases/latest/download/eb-windows.zip","Download for Windows","");
+var dlinux=createLinkListItem("https://github.com/harrymkt/endless-battle/releases/latest/download/eb-linux.zip","Download for Linux","");
 var dl=document.getElementById("download");
 dl.appendChild(dwindows);
 dl.appendChild(dlinux);
