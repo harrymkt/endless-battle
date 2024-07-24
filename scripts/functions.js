@@ -90,7 +90,7 @@ function createLinkListItem(href, text, target="_blank")
 {
 var listItem = document.createElement("li");
 var link = document.createElement("a");
-link.target = target;
+if(target!=="") link.target = target;
 link.href = href;
 link.textContent = text;
 listItem.appendChild(link);
@@ -117,9 +117,93 @@ catch (error)
 return `Error fetching latest release: ${error}`;
 }
 }
+async function get_github_release_asset_info(owner, repo, release, asset, what)
+{
+try
+{
+// Fetch the assets of the specified release from the GitHub API
+const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/${release}/assets`);
+
+if (!response.ok)
+{
+return `Failed to fetch assets: ${response.status} ${response.statusText}`;
+}
+
+const data = await response.json();
+const assetInfo = data.find(item => item.name === asset);
+
+if (!assetInfo)
+{
+return `Asset not found: ${asset}`;
+}
+
+let inf = "";
+if (what === "size") inf = assetInfo.size;
+else if (what === "download_count") inf = assetInfo.download_count;
+return inf;
+}
+catch (error)
+{
+return `Error fetching release assets: ${error.message}`;
+}
+}
 function get_storage(value, otherwise="undefined")
 {
 var n=localStorage.getItem(value);
 if(n==="" || n==="undefined" || n===null) n=otherwise;
 return n;
+}
+function round(num, decimals)
+{
+const factor = Math.pow(10, decimals);
+return Math.round(num * factor) / factor;
+}
+function convert_size(size, round_to = 2)
+{
+if (size < 1) return "0 B";
+if (size < 1024)
+{
+return round(size, round_to) + " B";
+}
+size = size / 1024;
+if (size < 1024)
+{
+return round(size, round_to) + " KB";
+}
+size = size / 1024;
+if (size < 1024)
+{
+return round(size, round_to) + " MB";
+}
+size = size / 1024;
+if (size < 1024)
+{
+return round(size, round_to) + " GB";
+}
+size = size / 1024;
+return round(size, round_to) + " TB";
+}
+function instant_get_github_latest_release_version(owner, repo, otherwise="undefined")
+{
+get_github_latest_release_version(owner, repo)
+.then(v=>
+{
+return v;
+})
+.catch(er=>
+{
+return otherwise;
+}
+}
+function instant_get_github_release_asset_info(owner, repo, release, asset, what, otherwise="undefined")
+{
+get_github_release_asset_info(owner, repo, release, asset, what)
+.then(i=>
+{
+return i;
+})
+.catch(er=>
+{
+return otherwise;
+}
 }
