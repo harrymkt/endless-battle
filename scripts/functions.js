@@ -157,7 +157,7 @@ return v;
 .catch(er=>
 {
 return otherwise;
-})
+});
 }
 function instant_get_github_release_asset_info(owner, repo, release, asset, what, otherwise="undefined")
 {
@@ -169,7 +169,7 @@ return i;
 .catch(er=>
 {
 return otherwise;
-})
+});
 }
 function get_storage(value, otherwise="undefined")
 {
