@@ -39,7 +39,8 @@ def get_title_from_markdown(markdown_text):
 			return line[2:].strip()
 	return "Untitled"
 
-def process_markdown_file(filepath):
+def process_markdown_file(filepath, outdir, optional_relpath=""):
+# optional_relpath parameter is mostly not necessary because this is only used in different filenames than index.md.
 	"""Converts a markdown file to HTML and saves it."""
 	with open(filepath, "r") as file:
 		markdown_text = file.read()
@@ -47,16 +48,18 @@ def process_markdown_file(filepath):
 	title = get_title_from_markdown(markdown_text)
 	html_text = convert_to_html(markdown_text)
 	complete_html = HTML_TOP.format(title=title) + html_text + HTML_BOTTOM
-	
-	relative_path = os.path.relpath(filepath)
-	html_filename = os.path.join("../docs", relative_path.replace(".md", ".html"))
+	fp=filepath
+	if not optional_relpath=="":
+		fp=optional_relpath
+	relative_path = os.path.relpath(fp)
+	html_filename = os.path.join(outdir, relative_path.replace(".md", ".html"))
 	
 	os.makedirs(os.path.dirname(html_filename), exist_ok=True)
 	
 	with open(html_filename, "w") as html_file:
 		html_file.write(complete_html)
 	
-	print(f"Converted {filepath} to {html_filename}")
+	print(f"Converted {fp} to {html_filename}")
 
 def main():
 	if os.path.exists("../docs"):
@@ -64,7 +67,13 @@ def main():
 		print("Docs directory has been deleted")
 	"""Finds all markdown files in the directory and subdirectories, converts to HTML"""
 	for filepath in glob.glob("**/*.md", recursive=True):
-		process_markdown_file(filepath)
-
+		process_markdown_file(filepath,"../docs")
+# Convert the changes directory
+	if os.path.exists("../changes"):
+		shutil.rmtree("../changes")
+		print("changes directory has been deleted")
+	if os.path.exists("../changes.md"):
+		process_markdown_file("../changes.md","../changes","index.md")
+		print("Changes converted")
 if __name__ == "__main__":
 	main()
