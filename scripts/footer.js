@@ -34,10 +34,17 @@ acclink.href="/accessibility";
 acclink.title="Learn more about the accessibility of the site!";
 acclink.textContent="Accessibility";
 accpar.appendChild(acclink);
+var clpar=document.createElement("p");
+var cllink=document.createElement("a");
+cllink.href="/endless-battle/changes";
+cllink.textContent="Change Log";
+clpar.appendChild(cllink);
 
 // Append paragraphs to the existing "fd" container
 fd.appendChild(aboutLink);
 fd.appendChild(contactLink);
+fd.appendChild(clpar);
+
 fd.appendChild(accpar);
 document.body.appendChild(fd);
 // Create a footer element
