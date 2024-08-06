@@ -72,8 +72,8 @@ def main():
 	if os.path.exists("../changes"):
 		shutil.rmtree("../changes")
 		print("changes directory has been deleted")
-	if os.path.exists("../changes.md"):
-		process_markdown_file("../changes.md","../changes","index.md")
+	if os.path.exists("../changelog.md"):
+		process_markdown_file("../changelog.md","../changes","index.md")
 		print("Changes converted")
 if __name__ == "__main__":
 	main()
