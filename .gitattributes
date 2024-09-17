@@ -1,5 +1,0 @@
-# Auto detect text files and perform LF normalization
-* text=auto
-*.md linguist-detectable=true linguist-vendored=false linguist-generated=false linguist-documentation=false
-*.txt linguist-detectable=true linguist-vendored=false linguist-generated=false linguist-documentation=false
-*.url linguist-detectable=true linguist-vendored=false linguist-generated=false linguist-documentation=false
