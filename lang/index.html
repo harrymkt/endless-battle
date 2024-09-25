@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contributors - Endless Battle</title>
+<title>Change language - Endless Battle</title>
 </head>
 <body>
 <h1>Accessibility links</h1>
@@ -17,20 +17,36 @@
 <li><a href="https://harrymkt.github.io/endless-battle">Home</a></li>
 <li><a href="https://harrymkt.github.io/endless-battle/docs">Documentation</a></li>
 <li><a href="https://harrymkt.github.io/endless-battle/contribute">Contributing</a></li>
-<li><a aria-current="page" href="https://harrymkt.github.io/endless-battle/contributors">Contributors and credits</a></li>
+<li><a href="https://harrymkt.github.io/endless-battle/contributors">Contributors and credits</a></li>
 <li><a href="https://harrymkt.github.io/endless-battle/to-do-list">To Do List</a></li>
 </ul>
 </nav>
 <main>
 <div id="mainc">
-<h1 id="Contributors">Contributors</h1>
-<p>This is the list of contributors who helped the game better.</p>
-<p>Use the heading level 2 to move each category, such as translations and general credits. Use heading level 3 to move to each person or language file</p>
-</div>
+<h2>Select Your Language</h2>
+<form onsubmit="goToLanguage(); return false;">
+<label for="language">Choose a language:</label>
+<select id="language" name="language">
+<option value="">--Select--</option>
+<option value="https://harrymkt.github.io/endless-battle">English</option>
+<option value="https://harrymkt.github.io/endless-battle/my">Burmese</option></select>
+<br><br>
+<input type="submit" value="Change">
+</form></div>
 </main>
 <footer>
 <p>Powered by <a href="https://github.com/harrymkt/zluinav">UI Navigation</a> theme, created by <a href="https://harrymkt.github.io">Harry Min Khant</a>.</p>
 </footer>
+<script>
+function goToLanguage()
+{
+var selectedLanguage = document.getElementById("language").value;
+if (selectedLanguage)
+{
+window.location.href = selectedLanguage;
+}
+}
+</script>
 <script src="https://harrymkt.github.io/endless-battle/scripts/copy.js"></script>
 </body>
 </html>
