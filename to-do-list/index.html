@@ -26,7 +26,7 @@
 <div id="mainc">
 <h1 id="To Do List">To Do List</h1>
 <p>This list contains code improvements or libraries that are still need to be defined, added, used, modified, replaced or otherwise changed in order to get the best possible working and are beneficial to display in public interestry.</p>
-<h2 id="Translation_system">Translation system</h2>
+<h2 id="translation">Translation system</h2>
 <p>Currently, we have a private translation system but it is not used yet, which features including dynamic variables and using IDs, fallback dictionary if the translated ID is not found for the current selected language, and so on. Unfortunately, this system is at least for now, but not the advance level. This system is not ideal for the following reasons:</p>
 <ol>
 <li>The system's dynamic variables feature is not good enough to translate. For example, <code>a {1} is {2}, about {3} tiles away</code>. In this case, <code>{2}</code> is the variable which tells the direction, in front, behind, etc. However, we cannot subtranslate the part such as <code>in front</code>, <code>behind</code>, etc, because the dynamic variables feature can only translate once for a given ID. Either we must find a good system for this task, or use the messages instead of IDs, which could have more control over the translations, but we will still have the problem of lower and upper case for the messages again in this one, so we need to decide the best use of system for the translation.</li>
