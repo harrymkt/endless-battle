@@ -51,7 +51,19 @@ This game will provide you with endless hours of gameplay until you stop. We dev
 <li>A keyboard is required to play on Android! While the game has gestures available, all tasks cannot be set. Note, Android version is currently limited until further notice. For example, game data cannot save, you cannot type input etc.</li>
 </ul>
 <h2 id="download">Download</h2>
-<p>Version: Always Latest</p>
+<p id="version"></p>
+<p id="version_date"></p>
+<script>
+get_gh_release_info("harrymkt", "endless-battle").then(v=>
+{
+document.getElementById("version").textContent=`Version: ${v}`;
+});
+
+get_gh_release_info("harrymkt", "endless-battle", "latest", "published_at").then(v=>
+{
+document.getElementById("version_date").textContent=`Updated on: ${local_datetime_string(v)}`;
+});
+</script>
 <p>download for:</p>
 <ul>
 <li><a href="https://github.com/harrymkt/endless-battle/releases/latest/download/eb.zip">Windows</a></li>
